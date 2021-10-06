@@ -58,6 +58,24 @@ main {
   font-size: 20px;
 }
 
+.text-box:first-child {
+  position: relative;
+}
+
 .text-box:last-child {
   background-color: #e5e5e554;
+}
+
+button {
+  width: 256px;
+  height: 131px;
+  background-color: white;
+  position: absolute;
+  top: 33%;
+  right: -47%;
+  font-size: 30px;
+  color: var(--color-pink);
+  border: none;
+  box-shadow: 5px 5px 10px 3px lightgray;
+  cursor: pointer;
 }
