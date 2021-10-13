@@ -13,7 +13,7 @@ def translator(sentence):
     eng_tokenizer.Load(eng_model_prefix + '.model')
 
     model_path = '/Users/leejisu/Documents/project/multicampus/2021_NLP_Project/tree_project/static/model/'
-    opt = Namespace(models=[model_path + 'model_step_80000.pt'], n_best=1, alpha=0.0, batch_type='tokens', beam_size=5, beta=-0.0, block_ngram_repeat=0, coverage_penalty='none', data_type='text', dump_beam='', fp32=False, int8=False, gpu=-1, ignore_when_blocking=[], length_penalty='none', max_length=100, max_sent_length=None, min_length=0, output='/dev/null', phrase_table='', random_sampling_temp=1.0, random_sampling_topk=0, random_sampling_topp=0, ratio=-0.0, replace_unk=False, ban_unk_token=False, tgt_prefix=False, report_align=False, report_time=False, seed=829, stepwise_penalty=False, tgt=None, verbose=False)
+    opt = Namespace(models=[model_path + 'model_step_100000.pt'], n_best=1, alpha=0.0, batch_type='tokens', beam_size=5, beta=-0.0, block_ngram_repeat=0, coverage_penalty='none', data_type='text', dump_beam='', fp32=False, int8=False, gpu=-1, ignore_when_blocking=[], length_penalty='none', max_length=100, max_sent_length=None, min_length=0, output='/dev/null', phrase_table='', random_sampling_temp=1.0, random_sampling_topk=0, random_sampling_topp=0, ratio=-0.0, replace_unk=False, ban_unk_token=False, tgt_prefix=False, report_align=False, report_time=False, seed=829, stepwise_penalty=False, tgt=None, verbose=False)
     translator = build_translator(opt, report_score=False)
 
     # sentence = '이 수석은 시민사회에서 잔뼈가 굵지만 정치권과도 가깝다.'
