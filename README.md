@@ -1,10 +1,9 @@
 # 2021_NLP_Project
 
 ### Idiom Classifier
-시작이 좋아~<br/>
-나도~
+팀별 정리
 ---
 
 ### openNMT
-
+팀별 정리
 ---
