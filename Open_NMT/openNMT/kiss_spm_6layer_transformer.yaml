@@ -1,0 +1,83 @@
+save_data: /home/lab03/src/openNMT_all/data
+save_model: /home/lab03/src/openNMT_all/data/run/model
+
+data:
+  corpus_1:
+    path_src: /home/lab03/src/openNMT_all/data/src_all.txt
+    path_tgt: /home/lab03/src/openNMT_all/data/tgt_all.txt
+    transforms: [sentencepiece, filtertoolong]
+  # valid:
+  #   path_src: /home/lab03/src/openNMT_new/data/src-val.txt
+  #   path_tgt: /home/lab03/src/openNMT_new/data/tgt-val.txt
+  #   transforms: [sentencepiece, filtertoolong]
+
+# Tokenization options
+# has been ready to run
+src_subword_type: sentencepiece
+src_subword_model: /home/lab03/src/openNMT_all/data/subword/subword_kor.model
+tgt_subword_type: sentencepiece
+tgt_subword_model: /home/lab03/src/openNMT_all/data/subword/subword_eng.model
+
+# will be written
+skip_empty_level: silent
+src_vocab: /home/lab03/src/openNMT_all/data/vocab/kor_spm.src
+tgt_vocab: /home/lab03/src/openNMT_all/data/vocab/eng_spm.tgt
+# src_vocab_size: 32000
+# tgt_vocab_size: 32000
+src_seq_length: 512
+tgt_seq_length: 512
+# master_port: 10007
+overwrite: True
+
+# ADDITIONAL
+max_relative_positions: 16
+subword_nbest: 64
+subword_alpha: 0.1
+# src_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
+# tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
+
+# General opts
+save_checkpoint_steps: 10000
+valid_steps: 10000
+train_steps: 100000
+seed: 2
+
+# Batching
+queue_size: 10000
+bucket_size: 32768
+world_size: 1
+gpu_ranks: [0]
+batch_type: "tokens"
+batch_size: 2048
+valid_batch_size: 8
+max_generator_batches: 0
+accum_count: [4]
+accum_steps: [0]
+
+# Optimization
+model_dtype: "fp32"
+optim: "adam"
+learning_rate: 2
+warmup_steps: 8000
+decay_method: "noam"
+adam_beta2: 0.998
+max_grad_norm: 0
+label_smoothing: 0.1
+param_init: 0
+param_init_glorot: true
+normalization: "tokens"
+
+# Model
+encoder_type: transformer
+decoder_type: transformer
+position_encoding: true
+enc_layers: 6
+dec_layers: 6
+heads: 8
+rnn_size: 512
+word_vec_size: 512
+transformer_ff: 2048
+dropout_steps: [0]
+dropout: [0.1]
+attention_dropout: [0.1]
+# train_from: /home/lab03/src/openNMT_new/data/run/model_step_100000.pt

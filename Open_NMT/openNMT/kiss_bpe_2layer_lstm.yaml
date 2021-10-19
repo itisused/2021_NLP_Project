@@ -1,0 +1,46 @@
+# kiss.yaml
+
+## Where the samples will be written
+save_data: data1/run/test
+## Where the vocab(s) will be written
+src_vocab: data1/run/test.vocab-re.src
+tgt_vocab: data1/run/test.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: True
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: data1/src-re-train.txt
+        path_tgt: data1/tgt-train.txt
+    valid:
+        path_src: data1/src-re-val.txt
+        path_tgt: data1/tgt-val.txt
+
+# Vocabulary files that were just created
+src_vocab: data1/run/test.vocab-re.src
+tgt_vocab: data1/run/test.vocab.tgt
+
+train_from: data1/run/model_step_20000.pt
+
+batch_size: 64
+batch_type: tokens
+normalization: tokens
+dropout: 0.3
+decay_method: noam
+learning_rate: 2.0
+optim: adam
+# learning_rate: 0.001
+
+# Train on a single GPU
+world_size: 1
+gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: data1/run/model
+save_checkpoint_steps: 1000
+# seed: 3435
+train_steps: 100000
+valid_steps: 1000
+warmup_steps: 8000
+report_every: 100

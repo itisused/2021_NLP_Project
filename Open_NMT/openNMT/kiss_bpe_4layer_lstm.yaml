@@ -1,0 +1,52 @@
+# kiss.yaml
+
+## Where the samples will be written
+save_data: data/run/test
+## Where the vocab(s) will be written
+src_vocab: data/run/test.vocab.src
+tgt_vocab: data/run/test.vocab.tgt
+# Prevent overwriting existing files in the folder
+overwrite: True
+
+# Corpus opts:
+data:
+    corpus_1:
+        path_src: /content/drive/MyDrive/NLP-Project/data/src-re-train1.txt
+        path_tgt: /content/drive/MyDrive/NLP-Project/data/tgt-train1.txt
+    valid:
+        path_src: /content/drive/MyDrive/NLP-Project/data/src-re-val1.txt
+        path_tgt: /content/drive/MyDrive/NLP-Project/data/tgt-val1.txt
+
+# Vocabulary files that were just created
+src_vocab: /content/drive/MyDrive/NLP-Project/data/run/test-re.vocab.src
+tgt_vocab: /content/drive/MyDrive/NLP-Project/data/run/test-re.vocab.tgt
+
+# train_from: /content/drive/MyDrive/NLP-Project/Model/model_step_25000.pt
+
+rnn_size: 1000
+layers: 4
+
+optim: adam
+learning_rate: 0.001
+#adagrad_accumulator_init: 0.1
+#max_grad_norm: 2
+
+batch_size: 100
+dropout: 0.1
+
+#copy_attn: 'true'
+#global_attention: mlp
+#reuse_copy_attn: 'true'
+#bridge: 'true'
+
+world_size: 1
+gpu_ranks: [0]
+
+# Where to save the checkpoints
+save_model: /content/drive/MyDrive/NLP-Project/Model/model_re
+save_checkpoint_steps: 10000
+seed: 3435
+train_steps: 100000
+valid_steps: 1000
+warmup_steps: 8000
+report_every: 100
