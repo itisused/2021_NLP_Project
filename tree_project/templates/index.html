@@ -6,22 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tree - Translate</title>
     <link rel="stylesheet" href="../static/css/style.css" />
+    <script src="../static/js/script.js" defer></script>
   </head>
   <body>
     <header>
-      <img src="../static/img/Tree.gif" alt="logo" />
+      <img src="../static/img/Tree.gif" alt="logo" id="logo" />
     </header>
-    <main>
+    <main id="main">
       <div class="container">
         <div class="text-box">
-          <textarea
-            name="text"
-            id="input-kor"
-            placeholder="번역할 문장을 입력하세요."
-          ></textarea>
-          <button>Translate</button>
+          <form action="/translate" , method="post">
+            <textarea
+              name="kor"
+              id="input-kor"
+              placeholder="번역할 문장을 입력하세요."
+            >
+{{origText}}</textarea
+            >
+            <button class="translate_btn">Translate</button>
+          </form>
         </div>
-        <div class="text-box"></div>
+        <div class="text-box">
+          <div class="loading_box">
+            <img src="../static/img/loading.gif" alt="loading" id="loading" />
+          </div>
+          <div class="translate-text">{{translatedText}}</div>
+        </div>
       </div>
     </main>
   </body>

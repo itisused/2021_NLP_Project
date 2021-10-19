@@ -8,21 +8,22 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin: 0;
-  height: 70vh;
+  height: 80vh;
 }
 
 header {
   text-align: center;
 }
 
-img {
-  width: 20%;
+#logo {
+  width: 300px;
 }
 
 main {
@@ -34,8 +35,8 @@ main {
   display: flex;
   /* border: 1px solid black; */
   height: 100%;
-  justify-content: space-between;
-  padding: 164px;
+  justify-content: center;
+  padding: 160px;
 }
 
 .text-box {
@@ -43,6 +44,12 @@ main {
   height: 440px;
   border: 1px solid var(--color-light-blue);
   border-radius: 20px;
+  margin: 10px;
+}
+
+form {
+  width: 100%;
+  height: 100%;
 }
 
 #input-kor {
@@ -58,6 +65,67 @@ main {
   font-size: 20px;
 }
 
+.text-box:first-child {
+  position: relative;
+}
+
 .text-box:last-child {
   background-color: #e5e5e554;
+  padding: 20px;
+  font-size: 20px;
+  position: relative;
+  display: flex;
+}
+
+.translate_btn {
+  width: 134px;
+  height: 64px;
+  background-color: var(--color-pink);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 25px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 0 20px 0;
+}
+
+.loading_box {
+  opacity: 0;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+}
+
+.loading_box.visible {
+  opacity: 1;
+}
+
+#loading {
+  width: 100%;
+}
+
+.translate-text {
+  position: absolute;
+  top: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    flex-direction: column;
+    padding: 50px;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .text-box {
+    width: 100%;
+    height: 100%;
+  }
 }
