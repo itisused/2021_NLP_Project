@@ -35,7 +35,6 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.models import save_model
 
 import pickle
-#with open('./final_idiom_dataset_for_ko.pkl', 'rb') as f:
 with open('./2/train_34614.pkl','rb') as f:
   text = pickle.load(f)
 
@@ -109,37 +108,23 @@ hist = model.fit(x_train, y_train, validation_data = (x_test, y_test), epochs=3,
 
 """## Predict(Classifier)"""
 
-# Commented out IPython magic to ensure Python compatibility.
-# %cd /content/drive/MyDrive/Colab Notebooks/multicampus/Idiom Classifier/data
+
 import pickle
 with open('./2/test_3000.pkl', 'rb') as f:
   new_test = pickle.load(f)
-new_test
 
-new_test['ko'][10]
 new_test = new_test.sample(frac=1).reset_index(drop=True)
-new_test
 
 new_test_text, _ = build_data(new_test['ko'], np.zeros(len(new_test)))
 answer = new_test.Label.to_list()
-len(answer)
-# 시험 데이터로 학습 성능을 평가한다
+
 new_pred = model.predict(new_test_text)
 new_y_pred = np.where(new_pred > 0.5, 1, 0)
-#new_accuracy = (new_y_pred == answer).mean()
-#print("\nAccuracy = %.2f %s" % (accuracy * 100, '%'))
+
 
 from sklearn.metrics import accuracy_score, recall_score, precision_score, f1_score, confusion_matrix
-# 오차행렬
 
-# 정확도
 print("accuracy:", accuracy_score(answer, new_y_pred))
-
-# 정밀도
 print("precision:", precision_score(answer, new_y_pred))
-
-# 재현율
 print("recall:", recall_score(answer, new_y_pred))
-
-# f1-score
 print("F1-Score:", f1_score(answer, new_y_pred))
