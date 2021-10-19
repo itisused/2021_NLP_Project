@@ -8,11 +8,12 @@ Original file is located at
 
 # KoGPT2
 """
-
-!pip install --upgrade mxnet>=1.6.0
-!pip install gluonnlp
-!pip install transformers
-!pip install sentencepiece
+'''
+pip install --upgrade mxnet>=1.6.0
+pip install gluonnlp
+pip install transformers
+pip install sentencepiece
+'''
 
 import gluonnlp as nlp
 from gluonnlp.data import SentencepieceTokenizer, SentencepieceDetokenizer
