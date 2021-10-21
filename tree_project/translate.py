@@ -21,5 +21,3 @@ def translator(sentence):
     translated = translator.translate([sentence], batch_size=1)
     detokenized = eng_tokenizer.decode_pieces(translated[1][0][0].split())
     return detokenized
-
-# translator('같은 당 장제원 수석대변인도 "문 대통령 지지층이 댓글 공작을 할때는 네이버가 모른 체 하고 있다가 최근 젊은층의 비판 댓글이 쇄도하자 경찰을 끌어들여 이를 막으려는 것 아니냐"고 말했다.')

@@ -1,7 +1,7 @@
 /* Global */
 :root {
   /* Color */
-  --color-pink: #f8bcc6;
+  --color-pink: #ee4360;
   --color-light-blue: #bbcde8;
   --color-white: #f2f9fd;
 }
@@ -43,7 +43,7 @@ main {
   width: 630px;
   height: 440px;
   border: 1px solid var(--color-light-blue);
-  border-radius: 20px;
+  border-radius: 5px;
   margin: 10px;
 }
 
@@ -59,6 +59,7 @@ form {
   border-radius: 20px;
   padding: 20px;
   font-size: 20px;
+  resize: none;
 }
 
 #input-kor::placeholder {
@@ -88,7 +89,13 @@ form {
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 0 0 20px 0;
+  border-radius: 5px;
+  z-index: -1;
+}
+
+.translate_btn:hover {
+  background-color: #f8bcc6;
+  transition: background-color 0.1s ease-out;
 }
 
 .loading_box {
