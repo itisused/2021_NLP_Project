@@ -13,4 +13,4 @@ def translate():
     translatedText = translator(src_text)
     return render_template('index.html', origText=src_text, translatedText=translatedText)
 
-app.run(host="0.0.0.0")
+app.run(host="0.0.0.0", port=81)

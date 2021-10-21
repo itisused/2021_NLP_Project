@@ -5,16 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tree - Translate</title>
+    <script
+      src="https://kit.fontawesome.com/88c947a972.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="../static/css/style.css" />
     <script src="../static/js/script.js" defer></script>
   </head>
   <body>
-    <header>
+    <nav>
+      <div class="nav__container">
+        <div class="nav__menu-bar">
+          <a href="/"> Idiom Translate Project</a>
+        </div>
+        <button class="nav__btn">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <ul class="nav__menu">
+        <li class="nav__menu__item" data-link="#main">Home</li>
+        <li class="nav__menu__item" data-link="#about">About</li>
+        <a href="https://github.com/itisused/2021_NLP_Project" target="_blank">
+          <li class="nav__menu__item">GitHub</li>
+        </a>
+      </ul>
+    </nav>
+    <header id="main">
       <img src="../static/img/Tree.gif" alt="logo" id="logo" />
     </header>
-    <main id="main">
-      <div class="container">
-        <div class="text-box">
+    <main>
+      <div class="main__container">
+        <div class="main__text-box">
           <form action="/translate" , method="post">
             <textarea
               name="kor"
@@ -26,7 +47,7 @@
             <button class="translate_btn">Translate</button>
           </form>
         </div>
-        <div class="text-box">
+        <div class="main__text-box">
           <div class="loading_box">
             <img src="../static/img/loading.gif" alt="loading" id="loading" />
           </div>
@@ -34,5 +55,14 @@
         </div>
       </div>
     </main>
+    <hr width="95%" />
+    <footer id="about">
+      <h1>About</h1>
+    </footer>
+
+    <!-- Arrow up -->
+    <button class="arrow-up">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </body>
 </html>
