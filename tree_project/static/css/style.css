@@ -113,6 +113,10 @@ header {
 }
 
 /* Main */
+main {
+  height: 70vh;
+}
+
 .main__container {
   background-color: var(--color-white);
   display: flex;
@@ -120,7 +124,7 @@ header {
 }
 
 .main__text-box {
-  width: 600px;
+  width: 500px;
   height: 300px;
   border: 1px solid var(--color-black);
   border-radius: 5px;
