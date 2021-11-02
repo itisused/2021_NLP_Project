@@ -1,4 +1,3 @@
-# prediction할 때 src 데이터로 텍스트 파일이 들어가는데 이걸 코드 내에서 string으로 받아서 prediction 을 해보자!
 from onmt.translate.translator import build_translator
 from argparse import Namespace
 import sentencepiece as spm

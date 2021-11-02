@@ -1,0 +1,5 @@
+Flask==2.0.2
+OpenNMT-py==2.2.0
+sentencepiece==0.1.96
+tensorflow==2.6.0
+torch==1.6.0
