@@ -50,4 +50,5 @@ $ cd tree_project
 $ python main.py
 ```
 
-![그림1](https://user-images.githubusercontent.com/51789449/139780377-4bd9ab8b-b590-4492-81c9-91acd0c2c4f5.gif)
+![Untitled-1](https://user-images.githubusercontent.com/51789449/139788915-4051da49-8f80-47b2-89d5-5934951474ab.gif)
+
