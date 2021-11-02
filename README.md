@@ -7,7 +7,7 @@
 ---
 # 프로젝트 소개
 현재 기계 번역기는 한국어 관용구를 실제 뜻과 다르게 ‘직역’하는 경우가 대다수
-![그림1](https://user-images.githubusercontent.com/84376125/139774024-6e2dd83e-8f4e-4aa9-bd97-674bdd285069.png)
+![image](https://user-images.githubusercontent.com/75319377/139774270-f3addd7d-ec9e-4fc5-bac8-9cd8e12cf548.png)
 
 
 이를 해결하기 위한 관용구 번역기 구현 프로젝트
