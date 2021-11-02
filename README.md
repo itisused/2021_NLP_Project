@@ -26,10 +26,10 @@
 
 
 # 팀원 소개
-[김태영](https://github.com/itisused) \
-[김예찬](https://github.com/2pterons) \
-[김택현](https://github.com/dobbytk) \
-[심판교](https://github.com/gy0-0o) \
-[유현승](https://github.com/hyunicecream) \
-[이지수](https://github.com/lizzys16) \
+[김태영](https://github.com/itisused)
+[김예찬](https://github.com/2pterons)
+[김택현](https://github.com/dobbytk)
+[심판교](https://github.com/gy0-0o)
+[유현승](https://github.com/hyunicecream)
+[이지수](https://github.com/lizzys16)
 [진가형](https://github.com/Cheyenne-cloud)
