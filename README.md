@@ -11,7 +11,7 @@
 
 
 이를 해결하기 위한 관용구 번역기 구현 프로젝트
-![그림2](https://user-images.githubusercontent.com/84376125/139774044-cddc5a6e-8a58-4129-bc8f-cbdce600017d.png)
+![image](https://user-images.githubusercontent.com/75319377/139774361-02b84805-0fff-4e72-a3bd-08a1723be37f.png)
 
 
 # 추진 일정
