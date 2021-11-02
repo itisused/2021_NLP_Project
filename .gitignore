@@ -1,4 +1,4 @@
-.DS_Store
 model/
 .DS_Store
-
+.DS_Store
+*.json

@@ -1,50 +1,135 @@
 /* Global */
 :root {
   /* Color */
-  --color-pink: #f8bcc6;
-  --color-light-blue: #bbcde8;
-  --color-white: #f2f9fd;
+  --color-main: #15d71c;
+  --color-black: #00000041;
+  --color-white: white;
+
+  /* Font Size */
+  --font-text-size: 24px;
 }
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  padding-left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  height: 80vh;
+  margin: 0;
+  cursor: default;
 }
 
+/* Navbar */
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-white);
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+}
+
+.nav__container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav__menu-bar {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 70px;
+  /* margin-left: 10px; */
+}
+
+.nav__btn {
+  background-color: transparent;
+  font-size: 30px;
+  color: black;
+  /* margin-right: 10px; */
+}
+
+.nav__menu {
+  margin: 0;
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.nav__menu.open {
+  display: flex;
+}
+
+.nav__menu__item {
+  padding: 8px 12px;
+  margin: 0 4px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: black;
+}
+
+.nav__menu__item:hover {
+  border: 1px solid var(--color-white);
+  background-color: var(--color-main);
+  color: white;
+}
+
+/* Header */
 header {
   text-align: center;
 }
 
 #logo {
+  margin-top: 70px;
   width: 300px;
 }
 
+/* Main */
 main {
-  height: 100%;
+  height: 70vh;
 }
 
-.container {
+.main__container {
   background-color: var(--color-white);
   display: flex;
-  /* border: 1px solid black; */
-  height: 100%;
   justify-content: center;
-  padding: 160px;
 }
 
-.text-box {
-  width: 630px;
-  height: 440px;
-  border: 1px solid var(--color-light-blue);
-  border-radius: 20px;
+.main__text-box {
+  width: 500px;
+  height: 300px;
+  border: 1px solid var(--color-black);
+  border-radius: 5px;
   margin: 10px;
+  margin-top: 0;
 }
 
 form {
@@ -56,39 +141,49 @@ form {
   width: 100%;
   height: 100%;
   border: none;
-  border-radius: 20px;
+  border-radius: 5px;
   padding: 20px;
-  font-size: 20px;
+  font-size: var(--font-text-size);
+  resize: none;
 }
 
 #input-kor::placeholder {
-  font-size: 20px;
+  font-size: var(--font-text-size);
 }
 
-.text-box:first-child {
+#input-kor:focus {
+  outline-color: var(--color-main);
+}
+
+.main__text-box:first-child {
   position: relative;
 }
 
-.text-box:last-child {
-  background-color: #e5e5e554;
+.main__text-box:last-child {
+  background-color: var(--color-white);
   padding: 20px;
-  font-size: 20px;
+  font-size: var(--font-text-size);
   position: relative;
   display: flex;
+  margin-bottom: 100px;
 }
 
 .translate_btn {
   width: 134px;
   height: 64px;
-  background-color: var(--color-pink);
+  background-color: var(--color-main);
   position: absolute;
   bottom: 0;
   right: 0;
   font-size: 25px;
   color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 0 0 20px 0;
+  border-radius: 5px;
+  /* z-index: -1; */
+}
+
+.translate_btn:hover {
+  opacity: 60%;
+  transition: background-color 0.1s ease-out;
 }
 
 .loading_box {
@@ -115,16 +210,40 @@ form {
   top: 20px;
 }
 
+footer {
+  height: 90vh;
+}
+
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 @media screen and (max-width: 960px) {
-  .container {
+  .main__container {
     flex-direction: column;
-    padding: 50px;
     align-items: center;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .text-box {
+  .main__text-box {
     width: 100%;
     height: 100%;
   }
